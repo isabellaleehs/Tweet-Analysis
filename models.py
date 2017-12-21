@@ -11,8 +11,10 @@ def make_model(tweets, n, x_title, y_title):
     Inputs:
         tweets: a list of tweets
         n: integer
+        x_title: x axis title
+        y_title: y axis title
 
-	Returns: list of entity, count pairs
+	Returns: bar chart data
     '''
 	top_hashtags = get_top_n_entities(tweets, ("hashtags", "text"), n)
 	labels, freq = zip(*top_hashtags)
@@ -21,7 +23,9 @@ def make_model(tweets, n, x_title, y_title):
 	bar.axis_titles(x=x_title, y=y_title)
 	return bar
 
+# Edit this section according to whichever handle you're analyzing
 trump_tweets = get_json_from_file("data/trump.json")
-obama_tweets = get_json_from_file("data/obama.json")
 make_model(trump_tweets, 10, "Top 10 Hashtags", "Frequency").to_json('models/top_hashtags_trump.json')
+
+obama_tweets = get_json_from_file("data/obama.json")
 make_model(obama_tweets, 10, "Top 10 Hashtags", "Frequency").to_json('models/top_hashtags_obama.json')

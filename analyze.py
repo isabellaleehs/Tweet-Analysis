@@ -5,7 +5,7 @@ from basic_algo import find_top_n
 
 def get_top_n_entities(tweets, entity_key, n):
     '''
-    Find the N most frequently occuring entities
+    Find the N most frequently occuring entities.
 
     Inputs:
         tweets: a list of tweets

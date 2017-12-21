@@ -13,9 +13,14 @@ access_secret = "bi3EDBWB6v8Bdi2npYJMFQGDOxM17vVISQS16N6RVmoPH"
 
 
 def get_all_tweets(screen_name, filename):
-    
-    #Twitter only allows access to a users most recent 3240 tweets with this method
-    
+    '''
+    Loads a user's 3240 most recent tweets (max. allowed by Twitter) into a JSON file.
+
+    Inputs:
+        screen_name: (string) user handle
+        filename: (string) JSON filename
+
+    '''    
     #authorize twitter, initialize tweepy
     auth = tweepy.OAuthHandler("0FQKWHBk2biSQ48MI60ONDN12", "ZCFSopVJkuXPgpRclvcO5pgVoqlVQwvpJt29qZSCygCms92sNK")
     auth.set_access_token("940503837156057089-DlIIemTz38MjhLLXopFKDGWB5SQbpEM", \

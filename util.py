@@ -12,7 +12,6 @@ def cmp_to_key(mycmp):
     Convert a cmp= function into a key= function
     From: https://docs.python.org/3/howto/sorting.html
     '''
-    
     class K:
         def __init__(self, obj, *args):
             self.obj = obj
@@ -65,6 +64,7 @@ def cmp_count_tuples(t0, t1):
         return 1
     return 0
 
+
 def sort_count_pairs(l):
     '''
     Sort pairs using the second value as the primary sort key and the
@@ -76,6 +76,7 @@ def sort_count_pairs(l):
     Returns: list of key/value pairs
     '''
     return sorted(l, key=cmp_to_key(cmp_count_tuples))
+
 
 def get_json_from_file(filename):
     '''
